@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tetris</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <h1 class="title">Tetris</h1>
+      <div class="game-layout">
+        <div class="board-wrap">
+          <canvas id="gameCanvas" aria-label="Tetris playfield"></canvas>
+        </div>
+        <aside class="panel" id="scorePanel">
+          <div class="stat stat-score">
+            <span class="stat-label">Score</span>
+            <span class="stat-value" id="score">0</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Level</span>
+            <span class="stat-value" id="level">0</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Lines</span>
+            <span class="stat-value" id="lines">0</span>
+          </div>
+          <div class="next-wrap">
+            <span class="stat-label">Next</span>
+            <canvas id="nextCanvas" width="80" height="80" aria-label="Next piece preview"></canvas>
+          </div>
+          <div class="controls">
+            <h2 class="controls-title">Controls</h2>
+            <ul>
+              <li><kbd>←</kbd> <kbd>→</kbd> Move</li>
+              <li><kbd>↑</kbd> Rotate</li>
+              <li><kbd>↓</kbd> Soft drop</li>
+              <li><kbd>Space</kbd> Hard drop</li>
+            </ul>
+          </div>
+          <button type="button" id="restartButton" class="restart-btn">Restart</button>
+        </aside>
+      </div>
+    </div>
+    <script src="js/constants.js"></script>
+    <script src="js/tetrominoes.js"></script>
+    <script src="js/engine.js"></script>
+    <script src="js/render.js"></script>
+    <script src="js/input.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
