@@ -109,9 +109,9 @@ const Render = {
 
   drawNextPiece(type) {
     const { nextCtx } = this;
-    const size = 120;
+    const size = nextCtx.canvas.width;
     nextCtx.fillStyle = '#1a1d27';
-    nextCtx.fillRect(0, 0, size, size);
+    nextCtx.fillRect(0, 0, size, nextCtx.canvas.height);
 
     if (!type) return;
 
