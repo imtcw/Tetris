@@ -1,18 +1,20 @@
 const Input = {
   engine: null,
   _boundHandler: null,
+  _boundKeyUpHandler: null,
   _softDropInterval: null,
 
   init(engine) {
     this.engine = engine;
     this._boundHandler = this._onKeyDown.bind(this);
+    this._boundKeyUpHandler = this._onKeyUp.bind(this);
     window.addEventListener('keydown', this._boundHandler);
-    window.addEventListener('keyup', this._onKeyUp.bind(this));
+    window.addEventListener('keyup', this._boundKeyUpHandler);
   },
 
   destroy() {
     window.removeEventListener('keydown', this._boundHandler);
-    window.removeEventListener('keyup', this._onKeyUp.bind(this));
+    window.removeEventListener('keyup', this._boundKeyUpHandler);
     this._stopSoftDropRepeat();
   },
 
